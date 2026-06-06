@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.navbar h1 { font-size: 1.4rem; letter-spacing: 1px; }
+.navbar span { font-size: 0.85rem; opacity: 0.7; }
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Form */
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.form-card h2 { margin-bottom: 1rem; font-size: 1.1rem; color: #444; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.form-row input,
+.form-row select,
+.form-full input,
+.form-full textarea {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+.form-full { margin-bottom: 0.75rem; }
+.form-full textarea { resize: vertical; min-height: 70px; font-family: inherit; }
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+.btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: #6c63ff; color: white; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-danger { background: #ff4d4f; color: white; font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+.btn-danger:hover { opacity: 0.85; }
+
+/* Products grid */
+.section-title {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+/* Product Card */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.card h3 { font-size: 1.05rem; color: #1a1a2e; }
+.badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge-green { background: #e6f9f0; color: #27ae60; }
+.badge-red { background: #fff0f0; color: #e74c3c; }
+.card-category { font-size: 0.8rem; color: #999; }
+.card-desc { font-size: 0.88rem; color: #666; flex: 1; }
+.card-price { font-size: 1.3rem; font-weight: 700; color: #6c63ff; }
+.card-footer { display: flex; justify-content: flex-end; margin-top: 0.25rem; }
+
+/* States */
+.loading { text-align: center; padding: 3rem; font-size: 1.1rem; color: #888; }
+.error { background: #fff0f0; color: #e74c3c; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.empty { text-align: center; padding: 3rem; color: #aaa; font-size: 1rem; }
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .navbar { flex-direction: column; gap: 0.3rem; text-align: center; }
+}
